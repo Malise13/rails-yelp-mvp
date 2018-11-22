@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+5.times do |i|
+  r = Restaurant.create(name: "Resto ##{i}", address: "Casablanca, Morocco.", category: "french", phone_number: "#{i} 001")
+  r.save
+  5.times do |x|
+    Review.create(content: "good ##{x}", rating: x , restaurant: r)
+  end
+end
+
